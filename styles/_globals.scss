@@ -1,0 +1,21 @@
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+$ff-secondary: "Lexend Deca", sans-serif;
+$fw-heading: 700;
+$fw-body: 400;
+//colors
+$white: #ffffff;
+$purple: #ab5cdb;
+$bgc: #0a0c1c;
+$cardBG:#1B1937;
+//flex
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+//grid
+@mixin grid-centering {
+  display: grid;
+  place-content: center;
+}

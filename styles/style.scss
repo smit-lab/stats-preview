@@ -1,0 +1,108 @@
+@import "reset";
+@import "globals";
+@import "function";
+
+body {
+  @include grid-centering;
+  background-color: $bgc;
+  color: $white;
+}
+
+.card {
+  @include flex;
+  max-width: rem(1110);
+  border-radius: rem(8);
+  overflow: hidden;
+  background-color: $cardBG;
+
+  &-txt {
+    margin: rem(71) rem(95) rem(59) rem(71.5);
+
+    &__heading {
+      font-size: rem(36);
+      line-height: 1.22;
+      font-weight: $fw-heading;
+      margin-bottom: rem(25);
+
+      & span {
+        color: $purple;
+      }
+    }
+
+    &__para {
+      font-size: rem(15);
+      line-height: 1.67;
+      opacity: 0.75;
+      margin-bottom: rem(72);
+    }
+
+    &__stats {
+      @include flex;
+
+      &-txt h1{
+        font-size: rem(24);
+        line-height: 1.21;
+      }
+
+      &-txt h3 {
+        font-family: $ff-secondary;
+        font-size: rem(12);
+        line-height: 2.08;
+        text-transform: uppercase;
+        opacity: 0.6;
+        letter-spacing: 1px;
+        font-weight: $fw-body;
+      }
+    }
+  }
+
+  &-img {
+    max-width: rem(540);
+    height: rem(446);
+    position: relative;
+
+    &::before {
+      content: '';
+      background: $purple;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      opacity: 0.75;
+      mix-blend-mode:multiply;
+      z-index: 1;
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .card {
+    flex-direction: column-reverse;
+    max-width: rem(327);
+
+    &-txt {
+      margin: rem(40) rem(31) rem(32);
+      text-align: center;
+
+      &__heading {
+        font-size: rem(28);
+        line-height: 1.14;
+        margin-bottom: rem(16);
+      }
+
+      &__para {
+        margin-bottom: rem(40);
+      }
+
+      &__stats {
+        flex-direction: column;
+        gap: rem(14`);
+      }
+    }
+
+    &-img {
+      max-width: rem(327);
+      height: rem(240);
+    }
+  }
+}
